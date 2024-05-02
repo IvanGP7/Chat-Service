@@ -1,6 +1,10 @@
 import random
 import redis
 
+class NameServerService:
+    def test(self):
+        print("¿Connection done!")
+
 class Service_Users:
     
     def search_user(self, id):
