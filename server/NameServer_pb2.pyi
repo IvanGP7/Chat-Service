@@ -6,10 +6,10 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class testResponse(_message.Message):
-    __slots__ = ("message",)
-    MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    message: str
-    def __init__(self, message: _Optional[str] = ...) -> None: ...
+    __slots__ = ("sentence",)
+    SENTENCE_FIELD_NUMBER: _ClassVar[int]
+    sentence: str
+    def __init__(self, sentence: _Optional[str] = ...) -> None: ...
 
 class GetChatParametersRequest(_message.Message):
     __slots__ = ("chat_id",)

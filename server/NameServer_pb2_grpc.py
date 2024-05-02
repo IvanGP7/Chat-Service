@@ -16,17 +16,17 @@ class NameServerServiceStub(object):
             channel: A grpc.Channel.
         """
         self.GetChatParameters = channel.unary_unary(
-                '/NameServer_service.NameServerService/GetChatParameters',
+                '/NameServerService/GetChatParameters',
                 request_serializer=NameServer__pb2.GetChatParametersRequest.SerializeToString,
                 response_deserializer=NameServer__pb2.GetChatParametersResponse.FromString,
                 )
         self.RegisterClient = channel.unary_unary(
-                '/NameServer_service.NameServerService/RegisterClient',
+                '/NameServerService/RegisterClient',
                 request_serializer=NameServer__pb2.RegisterClientRequest.SerializeToString,
                 response_deserializer=NameServer__pb2.RegisterClientResponse.FromString,
                 )
         self.test = channel.unary_unary(
-                '/NameServer_service.NameServerService/test',
+                '/NameServerService/test',
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
                 response_deserializer=NameServer__pb2.testResponse.FromString,
                 )
@@ -73,7 +73,7 @@ def add_NameServerServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'NameServer_service.NameServerService', rpc_method_handlers)
+            'NameServerService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -92,7 +92,7 @@ class NameServerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/NameServer_service.NameServerService/GetChatParameters',
+        return grpc.experimental.unary_unary(request, target, '/NameServerService/GetChatParameters',
             NameServer__pb2.GetChatParametersRequest.SerializeToString,
             NameServer__pb2.GetChatParametersResponse.FromString,
             options, channel_credentials,
@@ -109,7 +109,7 @@ class NameServerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/NameServer_service.NameServerService/RegisterClient',
+        return grpc.experimental.unary_unary(request, target, '/NameServerService/RegisterClient',
             NameServer__pb2.RegisterClientRequest.SerializeToString,
             NameServer__pb2.RegisterClientResponse.FromString,
             options, channel_credentials,
@@ -126,7 +126,7 @@ class NameServerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/NameServer_service.NameServerService/test',
+        return grpc.experimental.unary_unary(request, target, '/NameServerService/test',
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             NameServer__pb2.testResponse.FromString,
             options, channel_credentials,
