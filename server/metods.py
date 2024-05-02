@@ -3,8 +3,7 @@ import redis
 
 class NameServerService:
     def test(self):
-        response="¡Connection done!"
-        return(response)
+        return('¡Connection done!')
 
 class Service_Users:
     
