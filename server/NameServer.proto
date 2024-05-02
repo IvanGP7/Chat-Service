@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+import "google/protobuf/empty.proto";
 
 // python3 -m grpc_tools.protoc -I./ --python_out=. --grpc_python_out=. --pyi_out=. ./NameServer.proto
 // genera NameServer_pb2_grpc.py y NameServer_pb2.py 
@@ -7,12 +7,12 @@ syntax = "proto3";
 package NameServer_service;
 
 service NameServerService {
-  rpc GetChatParameters (GetChatParametersRequest) returns (GetChatParametersResponse);
-  rpc RegisterClient (RegisterClientRequest) returns (RegisterClientResponse);
-  rpc test (nothing) returns (testResponse);
+  rpc GetChatParameters (GetChatParametersRequest) returns (GetChatParametersResponse){}
+  rpc RegisterClient (RegisterClientRequest) returns (RegisterClientResponse){}
+  rpc test (google.protobuf.Empty) returns (testResponse){}
 }
 
-message nothing {}
+
 
 message testResponse {
   string mesnsaje = 1;
