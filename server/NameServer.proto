@@ -9,9 +9,6 @@ message testResponse {
   string sentence = 1;
 }
 
-message testRequest {
-  int32 num = 1;
-}
 
 message GetChatParametersRequest {
   string chat_id = 1;
@@ -35,5 +32,5 @@ message RegisterClientResponse {
 service NameServerService {
   rpc GetChatParameters (GetChatParametersRequest) returns (GetChatParametersResponse){}
   rpc RegisterClient (RegisterClientRequest) returns (RegisterClientResponse){}
-  rpc test (testRequest) returns (testResponse){}
+  rpc test (google.protobuf.Empty) returns (testResponse) {}
 }
