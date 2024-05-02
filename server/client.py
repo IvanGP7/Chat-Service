@@ -19,7 +19,7 @@ import NameServer_pb2_grpc, NameServer_pb2
 
 channel = grpc.insecure_channel('localhost:50051')
 stub = NameServer_pb2_grpc.NameServerServiceStub(channel)
-print(stub.test)
+print(stub.test.mesnsaje)
 
 
 username = input("Introduce your username: ")
@@ -36,7 +36,6 @@ while (option > 1 or option < 5):
     print("     2. Subscribe to group chat")
     print("     3. Discover chats")
     print("     4. Access insult channel")
-    option = input()
     option = int(input())
 
 match option:
