@@ -3,6 +3,7 @@ import redis
 
 class NameServerService:
     def test(self):
+        print("Hola estoy en Test")
         return('¡Connection done!')
 
 class Service_Users:
