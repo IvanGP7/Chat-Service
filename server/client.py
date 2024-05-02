@@ -19,8 +19,10 @@ import NameServer_pb2_grpc, NameServer_pb2
 
 channel = grpc.insecure_channel('localhost:50051')
 stub = NameServer_pb2_grpc.NameServerServiceStub(channel)
-print(stub.test.mesnsaje)
-
+print(stub.test.message)
+empty = NameServer_pb2.google_dot_protobuf_dot_empty__pb2.Empty()
+response = stub.test(empty)
+print(response.sentence)
 
 username = input("Introduce your username: ")
 
