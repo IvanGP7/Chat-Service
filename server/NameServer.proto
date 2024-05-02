@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+
+// python3 -m grpc_tools.protoc -I./ --python_out=. --grpc_python_out=. --pyi_out=. ./NameServer.proto
+// genera NameServer_pb2_grpc.py y NameServer_pb2.py 
+
+package NameServer_service;
+
+service NameServerService {
+  rpc GetChatParameters (GetChatParametersRequest) returns (GetChatParametersResponse);
+  rpc RegisterClient (RegisterClientRequest) returns (RegisterClientResponse);
+  rpc test (nothing) returns (testResponse);
+}
+
+message nothing {}
+
+message testResponse {
+  string mesnsaje = 1;
+}
+
+message GetChatParametersRequest {
+  string chat_id = 1;
+}
+
+message GetChatParametersResponse {
+  string address = 1;
+  int32 port = 2;
+}
+
+message RegisterClientRequest {
+  string username = 1;
+  string ip_address = 2;
+  int32 port = 3;
+}
+
+message RegisterClientResponse {
+  bool success = 1;
+}
