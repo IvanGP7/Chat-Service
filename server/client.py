@@ -19,7 +19,7 @@ import NameServer_pb2_grpc, NameServer_pb2
 
 channel = grpc.insecure_channel('localhost:50051')
 stub = NameServer_pb2_grpc.NameServerServiceStub(channel)
-print(stub.test)
+print(stub.test.value)
 
 
 username = input("Introduce your username: ")
@@ -28,7 +28,7 @@ username = input("Introduce your username: ")
 print("Choose one option between 1 and 5:")
 option = 0
 count = 0
-while option > 0 and option < 5:
+while (option > 1 or option < 5):
     if count > 0:
         print("ERROR VALUE '{option}': TRY AGAIN!")
     print("Choose one option 1-4:")
