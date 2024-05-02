@@ -3,6 +3,7 @@
 import grpc
 
 import NameServer_pb2 as NameServer__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class NameServerServiceStub(object):
@@ -26,7 +27,7 @@ class NameServerServiceStub(object):
                 )
         self.test = channel.unary_unary(
                 '/NameServer_service.NameServerService/test',
-                request_serializer=NameServer__pb2.nothing.SerializeToString,
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
                 response_deserializer=NameServer__pb2.testResponse.FromString,
                 )
 
@@ -67,7 +68,7 @@ def add_NameServerServiceServicer_to_server(servicer, server):
             ),
             'test': grpc.unary_unary_rpc_method_handler(
                     servicer.test,
-                    request_deserializer=NameServer__pb2.nothing.FromString,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                     response_serializer=NameServer__pb2.testResponse.SerializeToString,
             ),
     }
@@ -126,7 +127,7 @@ class NameServerService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/NameServer_service.NameServerService/test',
-            NameServer__pb2.nothing.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             NameServer__pb2.testResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

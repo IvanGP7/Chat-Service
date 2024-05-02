@@ -12,27 +12,26 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10NameServer.proto\x12\x12NameServer_service\"\t\n\x07nothing\" \n\x0ctestResponse\x12\x10\n\x08mesnsaje\x18\x01 \x01(\t\"+\n\x18GetChatParametersRequest\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\":\n\x19GetChatParametersResponse\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\"K\n\x15RegisterClientRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x12\n\nip_address\x18\x02 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\x05\")\n\x16RegisterClientResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x32\xb5\x02\n\x11NameServerService\x12p\n\x11GetChatParameters\x12,.NameServer_service.GetChatParametersRequest\x1a-.NameServer_service.GetChatParametersResponse\x12g\n\x0eRegisterClient\x12).NameServer_service.RegisterClientRequest\x1a*.NameServer_service.RegisterClientResponse\x12\x45\n\x04test\x12\x1b.NameServer_service.nothing\x1a .NameServer_service.testResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10NameServer.proto\x12\x12NameServer_service\x1a\x1bgoogle/protobuf/empty.proto\" \n\x0ctestResponse\x12\x10\n\x08mesnsaje\x18\x01 \x01(\t\"+\n\x18GetChatParametersRequest\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\":\n\x19GetChatParametersResponse\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\"K\n\x15RegisterClientRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x12\n\nip_address\x18\x02 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\x05\")\n\x16RegisterClientResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x32\xb6\x02\n\x11NameServerService\x12r\n\x11GetChatParameters\x12,.NameServer_service.GetChatParametersRequest\x1a-.NameServer_service.GetChatParametersResponse\"\x00\x12i\n\x0eRegisterClient\x12).NameServer_service.RegisterClientRequest\x1a*.NameServer_service.RegisterClientResponse\"\x00\x12\x42\n\x04test\x12\x16.google.protobuf.Empty\x1a .NameServer_service.testResponse\"\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'NameServer_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
-  _globals['_NOTHING']._serialized_start=40
-  _globals['_NOTHING']._serialized_end=49
-  _globals['_TESTRESPONSE']._serialized_start=51
-  _globals['_TESTRESPONSE']._serialized_end=83
-  _globals['_GETCHATPARAMETERSREQUEST']._serialized_start=85
-  _globals['_GETCHATPARAMETERSREQUEST']._serialized_end=128
-  _globals['_GETCHATPARAMETERSRESPONSE']._serialized_start=130
-  _globals['_GETCHATPARAMETERSRESPONSE']._serialized_end=188
-  _globals['_REGISTERCLIENTREQUEST']._serialized_start=190
-  _globals['_REGISTERCLIENTREQUEST']._serialized_end=265
-  _globals['_REGISTERCLIENTRESPONSE']._serialized_start=267
-  _globals['_REGISTERCLIENTRESPONSE']._serialized_end=308
-  _globals['_NAMESERVERSERVICE']._serialized_start=311
-  _globals['_NAMESERVERSERVICE']._serialized_end=620
+  _globals['_TESTRESPONSE']._serialized_start=69
+  _globals['_TESTRESPONSE']._serialized_end=101
+  _globals['_GETCHATPARAMETERSREQUEST']._serialized_start=103
+  _globals['_GETCHATPARAMETERSREQUEST']._serialized_end=146
+  _globals['_GETCHATPARAMETERSRESPONSE']._serialized_start=148
+  _globals['_GETCHATPARAMETERSRESPONSE']._serialized_end=206
+  _globals['_REGISTERCLIENTREQUEST']._serialized_start=208
+  _globals['_REGISTERCLIENTREQUEST']._serialized_end=283
+  _globals['_REGISTERCLIENTRESPONSE']._serialized_start=285
+  _globals['_REGISTERCLIENTRESPONSE']._serialized_end=326
+  _globals['_NAMESERVERSERVICE']._serialized_start=329
+  _globals['_NAMESERVERSERVICE']._serialized_end=639
 # @@protoc_insertion_point(module_scope)
