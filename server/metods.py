@@ -2,8 +2,8 @@ import random
 import redis
 
 class NameServerService:
-    def test(self):
-        print("Hola estoy en Test")
+    def test(self, name):
+        print("Hola " + name + " estoy en Test ")
         return('Connected')
 
 class Service_Users:
