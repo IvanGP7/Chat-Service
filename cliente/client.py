@@ -14,12 +14,14 @@
 #           El canal insult es usado para enviar mesajes a un cliente indefinido que te pide una petición.
 # 
 import grpc
+from server import NameServer_grpc, MessageBroker_grpc
+
 channel = grpc.insecure_channel('localhost:50051')
 
 username = input("Introduce your username: ")
 
 #pedir al servidor los ids respecto al usuario
-
+print("Choose one option between 1 and 5:")
 option = 0
 count = 0
 while option > 0 and option < 5:

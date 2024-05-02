@@ -5,6 +5,11 @@ package NameServer_service;
 service NameServerService {
   rpc GetChatParameters (GetChatParametersRequest) returns (GetChatParametersResponse);
   rpc RegisterClient (RegisterClientRequest) returns (RegisterClientResponse);
+  rpc test () return (testResponse);
+}
+
+message testResponse {
+  string mesnsaje = 1;
 }
 
 message GetChatParametersRequest {

@@ -13,7 +13,7 @@ from concurrent import futures
 import metods
 import time
 import redis
-
+import NameServer_grpc
 # create a gRPC server
 server = grpc.server(futures.ThreadPoolExecutor(max_workers=20))
 r = redis.Redis(host='localhost', port=6379)
