@@ -10,33 +10,3 @@ class testResponse(_message.Message):
     SENTENCE_FIELD_NUMBER: _ClassVar[int]
     sentence: str
     def __init__(self, sentence: _Optional[str] = ...) -> None: ...
-
-class GetChatParametersRequest(_message.Message):
-    __slots__ = ("chat_id",)
-    CHAT_ID_FIELD_NUMBER: _ClassVar[int]
-    chat_id: str
-    def __init__(self, chat_id: _Optional[str] = ...) -> None: ...
-
-class GetChatParametersResponse(_message.Message):
-    __slots__ = ("address", "port")
-    ADDRESS_FIELD_NUMBER: _ClassVar[int]
-    PORT_FIELD_NUMBER: _ClassVar[int]
-    address: str
-    port: int
-    def __init__(self, address: _Optional[str] = ..., port: _Optional[int] = ...) -> None: ...
-
-class RegisterClientRequest(_message.Message):
-    __slots__ = ("username", "ip_address", "port")
-    USERNAME_FIELD_NUMBER: _ClassVar[int]
-    IP_ADDRESS_FIELD_NUMBER: _ClassVar[int]
-    PORT_FIELD_NUMBER: _ClassVar[int]
-    username: str
-    ip_address: str
-    port: int
-    def __init__(self, username: _Optional[str] = ..., ip_address: _Optional[str] = ..., port: _Optional[int] = ...) -> None: ...
-
-class RegisterClientResponse(_message.Message):
-    __slots__ = ("success",)
-    SUCCESS_FIELD_NUMBER: _ClassVar[int]
-    success: bool
-    def __init__(self, success: bool = ...) -> None: ...

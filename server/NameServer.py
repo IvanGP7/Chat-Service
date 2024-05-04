@@ -13,10 +13,27 @@ from concurrent import futures
 import metods
 import time
 import redis
-import NameServer_pb2_grpc, NameServer_pb2
+
+import NameServer_pb2_grpc
+import NameServer_pb2
+
+from metods import metods
+
+class NameServerServiceServicer(NameServer_pb2_grpc.NameServerServiceServicer):
+
+    def test(self, empty, context):
+        text = metods.test()
+        response = NameServer_pb2.testResponse()
+        response.sentence=text
+        print(f"Response data: {text}")  # Add this line
+        return response
 
 # create a gRPC server
-server = grpc.server(futures.ThreadPoolExecutor(max_workers=20))
+server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+
+NameServer_pb2_grpc.add_NameServerServiceServicer_to_server(
+    NameServerServiceServicer(), server)
+
 r = redis.Redis(host='localhost', port=6379)
 # listen on port 50051
 server.add_insecure_port('0.0.0.0:50051')

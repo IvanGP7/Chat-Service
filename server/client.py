@@ -14,14 +14,18 @@
 #           El canal insult es usado para enviar mesajes a un cliente indefinido que te pide una petición.
 # 
 import grpc
-import NameServer_pb2_grpc, NameServer_pb2
+import NameServer_pb2
+import NameServer_pb2_grpc
+
 #import MessageBroker_pb2_grpc, MessageBroker_pb2
 
 channel = grpc.insecure_channel('localhost:50051')
+
 stub = NameServer_pb2_grpc.NameServerServiceStub(channel)
 
-response = stub.test("ivan")
-print(response)
+empty = NameServer_pb2.google_dot_protobuf_dot_empty__pb2.Empty()
+response = stub.test(empty)
+print(response.sentence)
 
 username = input("Introduce your username: ")
 

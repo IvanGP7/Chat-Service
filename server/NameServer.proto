@@ -1,39 +1,14 @@
 syntax = "proto3";
-// import "google/protobuf/empty.proto";
+import "google/protobuf/empty.proto";
 
 // python3 -m grpc_tools.protoc -I./ --python_out=. --grpc_python_out=. --pyi_out=. ./NameServer.proto
 // genera NameServer_pb2_grpc.py y NameServer_pb2.py 
 
+// This service provides a namespace mechanism for chat applications.
+service NameServerService {
+  rpc test (google.protobuf.Empty) returns (testResponse) {}
+}
 
 message testResponse {
   string sentence = 1;
-}
-
-message testRequest {
-  string name = 1;
-}
-
-message GetChatParametersRequest {
-  string chat_id = 1;
-}
-
-message GetChatParametersResponse {
-  string address = 1;
-  int32 port = 2;
-}
-
-message RegisterClientRequest {
-  string username = 1;
-  string ip_address = 2;
-  int32 port = 3;
-}
-
-message RegisterClientResponse {
-  bool success = 1;
-}
-
-service NameServerService {
-  rpc GetChatParameters (testRequest) returns (GetChatParametersResponse){}
-  rpc RegisterClient (RegisterClientRequest) returns (RegisterClientResponse){}
-  rpc test (google.protobuf.Empty) returns (testResponse) {}
 }

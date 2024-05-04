@@ -7,7 +7,11 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class NameServerServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """python3 -m grpc_tools.protoc -I./ --python_out=. --grpc_python_out=. --pyi_out=. ./NameServer.proto
+    genera NameServer_pb2_grpc.py y NameServer_pb2.py 
+
+    This service provides a namespace mechanism for chat applications.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -15,16 +19,6 @@ class NameServerServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetChatParameters = channel.unary_unary(
-                '/NameServerService/GetChatParameters',
-                request_serializer=NameServer__pb2.GetChatParametersRequest.SerializeToString,
-                response_deserializer=NameServer__pb2.GetChatParametersResponse.FromString,
-                )
-        self.RegisterClient = channel.unary_unary(
-                '/NameServerService/RegisterClient',
-                request_serializer=NameServer__pb2.RegisterClientRequest.SerializeToString,
-                response_deserializer=NameServer__pb2.RegisterClientResponse.FromString,
-                )
         self.test = channel.unary_unary(
                 '/NameServerService/test',
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
@@ -33,19 +27,11 @@ class NameServerServiceStub(object):
 
 
 class NameServerServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """python3 -m grpc_tools.protoc -I./ --python_out=. --grpc_python_out=. --pyi_out=. ./NameServer.proto
+    genera NameServer_pb2_grpc.py y NameServer_pb2.py 
 
-    def GetChatParameters(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RegisterClient(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+    This service provides a namespace mechanism for chat applications.
+    """
 
     def test(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -56,16 +42,6 @@ class NameServerServiceServicer(object):
 
 def add_NameServerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetChatParameters': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetChatParameters,
-                    request_deserializer=NameServer__pb2.GetChatParametersRequest.FromString,
-                    response_serializer=NameServer__pb2.GetChatParametersResponse.SerializeToString,
-            ),
-            'RegisterClient': grpc.unary_unary_rpc_method_handler(
-                    servicer.RegisterClient,
-                    request_deserializer=NameServer__pb2.RegisterClientRequest.FromString,
-                    response_serializer=NameServer__pb2.RegisterClientResponse.SerializeToString,
-            ),
             'test': grpc.unary_unary_rpc_method_handler(
                     servicer.test,
                     request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
@@ -79,41 +55,11 @@ def add_NameServerServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class NameServerService(object):
-    """Missing associated documentation comment in .proto file."""
+    """python3 -m grpc_tools.protoc -I./ --python_out=. --grpc_python_out=. --pyi_out=. ./NameServer.proto
+    genera NameServer_pb2_grpc.py y NameServer_pb2.py 
 
-    @staticmethod
-    def GetChatParameters(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/NameServerService/GetChatParameters',
-            NameServer__pb2.GetChatParametersRequest.SerializeToString,
-            NameServer__pb2.GetChatParametersResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RegisterClient(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/NameServerService/RegisterClient',
-            NameServer__pb2.RegisterClientRequest.SerializeToString,
-            NameServer__pb2.RegisterClientResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+    This service provides a namespace mechanism for chat applications.
+    """
 
     @staticmethod
     def test(request,
